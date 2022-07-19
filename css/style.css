@@ -1,0 +1,243 @@
+ /* Style the navbar */
+ nav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Navbar links */
+  nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  } 
+
+  .grow { 
+    transition: all .6s ease-in-out; 
+    }
+    
+  .grow:hover { 
+    transform: scale(1.1); 
+    }
+
+    img {
+        border-radius: 15px;
+    }
+
+    .top {
+        border-radius: 0px;
+    }
+
+    figcaption {
+        position: absolute;
+        background-color: #f2f2f2;
+    }
+
+    .content p {
+        
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .content p:nth-child(1) {
+        width: 7.3em;
+        -webkit-animation: type 2s steps(40, end);
+        animation: type 2s steps(40, end);
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+      .content p:nth-child(2) {
+        width: 11.5em;
+        opacity: 0;
+        -webkit-animation: type2 2s steps(40, end);
+        animation: type2 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+      .content p:nth-child(3) {
+        width: 7.3em;
+        opacity: 0;
+        -webkit-animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+        animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+        -webkit-animation-delay: 4s;
+        animation-delay: 4s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes type {
+        0% {
+          width: 0;
+        }
+      }
+      @-webkit-keyframes type {
+        0% {
+          width: 0;
+        }
+      }
+      @keyframes type2 {
+        0% {
+          width: 0;
+        }
+        1% {
+          opacity: 1;
+        }
+        }
+      
+      @-webkit-keyframes type2 {
+        0% {
+          width: 0;
+        }
+        1% {
+          opacity: 1;
+        }
+        }
+      
+      @keyframes type3 {
+        0% {
+          width: 0;
+        }
+        1% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes type3 {
+        0% {
+          width: 0;
+        }
+        1% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+      @-webkit-keyframes blink {
+        50% {
+          border-color: tranparent;
+        }
+      }
+
+      .slider-wrapper {
+        margin: 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+       
+      .slides-container {
+        height: calc(100vh - 2rem);
+        width: 100%;
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: scroll;
+        scroll-behavior: smooth;
+      }
+       
+      .slide {
+        width: 100%;
+        height: 100%;
+        flex: 1 0 100%;
+      }
+
+      .slides-container {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    }
+     
+    /* WebKit */
+    .slides-container::-webkit-scrollbar { 
+        width: 0;
+        height: 0;
+    }
+
+    .slide-arrow {
+        position: absolute;
+        display: flex;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 4rem;
+        background-color: white;
+        border: none;
+        width: 2rem;
+        font-size: 3rem;
+        padding: 0;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 100ms;
+      }
+       
+      .slide-arrow:hover,
+      .slide-arrow:focus {
+        opacity: 1;
+      }
+       
+      #slide-arrow-prev {
+        left: 0;
+        padding-left: 0.25rem;
+        border-radius: 0 2rem 2rem 0;
+      }
+       
+      #slide-arrow-next {
+        right: 0;
+        padding-left: 0.75rem;
+        border-radius: 2rem 0 0 2rem;
+      }
+
+      #myBtn {
+        position: fixed;
+        bottom: 10px;
+        float: right;
+        right: 18.5%;
+        left: 77.25%;
+        max-width: 30px;
+        width: 100%;
+        font-size: 12px;
+        border-color: rgba(85, 85, 85, 0.2);
+        background-color: rgb(100,100,100);
+        padding: .5px;
+        border-radius: 4px;
+
+    }
+/*On Hover Color Change*/
+    #myBtn:hover {
+        background-color: #7dbbf1;
+    }
+
+    @media screen and (min-width: 768px) {
+      #myBtn {
+        display: none;
+      }
+    }
